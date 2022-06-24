@@ -124,7 +124,6 @@ public:
 			return numVoles;
 	}
 
-private:
 	void (*const generatePtr)(const SmallFieldVoleSender&,
 		size_t, const AES&, block* BOOST_RESTRICT, block* BOOST_RESTRICT);
 
@@ -132,6 +131,7 @@ private:
 	TRY_FORCEINLINE void generateImpl(size_t blockIdx, const AES& aes,
 		block* BOOST_RESTRICT outV, block* BOOST_RESTRICT outU) const;
 
+private:
 	template<size_t fieldBitsConst, typename T, T Func>
 	friend struct call_member_func;
 
@@ -244,7 +244,6 @@ public:
 		return std::max(volesPadded, roundUpTo(numVoles, 4));
 	}
 
-private:
 	void (*const generatePtr)(const SmallFieldVoleReceiver&,
 		size_t, const AES&, block* BOOST_RESTRICT, const block* BOOST_RESTRICT);
 
@@ -252,6 +251,7 @@ private:
 	TRY_FORCEINLINE void generateImpl(size_t blockIdx, const AES& aes,
 		block* BOOST_RESTRICT outW, const block* BOOST_RESTRICT correction) const;
 
+private:
 	template<size_t fieldBitsConst, typename T, T Func>
 	friend struct call_member_func;
 

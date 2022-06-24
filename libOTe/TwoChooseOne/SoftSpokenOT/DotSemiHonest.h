@@ -48,7 +48,7 @@ class DotSemiHonestSenderWithVole :
 	public OtExtSender,
 	public TimerAdapter,
 	public AESRekeyManager,
-	private ChunkedReceiver<
+	public ChunkedReceiver<
 		DotSemiHonestSenderWithVole<SubspaceVole>,
 		std::tuple<std::array<block, 2>>,
 		std::tuple<AlignedBlockPtrT<std::array<block, 2>>>
@@ -171,7 +171,7 @@ class DotSemiHonestReceiverWithVole :
 	public OtExtReceiver,
 	public TimerAdapter,
 	public AESRekeyManager,
-	private ChunkedSender<
+	public ChunkedSender<
 		DotSemiHonestReceiverWithVole<SubspaceVole>,
 		std::tuple<block>,
 		std::tuple<AlignedBlockPtr>

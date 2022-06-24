@@ -84,7 +84,7 @@ struct TwoOneRTCR : AESRekeyManager
 		tweak += tweakIncrease;
 		tweakMul = tweakMulLocal ^ hashKeys[log2floor((tweak - 1) ^ tweak)];
 
-		mAESs.get().hashBlocks<numBlocks>(tmp, ciphertext);
+		mAESs.get().template hashBlocks<numBlocks>(tmp, ciphertext);
 	}
 };
 
