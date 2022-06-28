@@ -2,7 +2,7 @@
 #project(minimal)
 
 
-file(GLOB_RECURSE SRCS *.cpp)
+file(GLOB_RECURSE SRCS *.cpp ../frontend/util.cpp)
 
 include_directories(${CMAKE_SOURCE_DIR})
 
