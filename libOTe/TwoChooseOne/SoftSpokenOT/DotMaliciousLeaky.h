@@ -40,7 +40,7 @@ public:
 
 		Hasher() : ChunkerBase(this) {}
 
-		void send(PRNG& prng, Channel& chl) {}
+		void send(PRNG&, Channel&) {}
 		size_t chunkSize() const { return 128; }
 		size_t paddingSize() const { return 0; }
 		TRY_FORCEINLINE void processChunk(
@@ -75,7 +75,7 @@ public:
 		Base::setBaseOts(baseRecvOts, choices, prng, chl, true);
 	}
 
-	virtual void initTemporaryStorage()
+	virtual void initTemporaryStorage() override
 	{
 		ChunkerBase::initTemporaryStorage();
 		extraW = allocAlignedBlockArray(2 * chunkSize() + paddingSize());
@@ -140,7 +140,7 @@ public:
 
 		Hasher() : ChunkerBase(this) {}
 
-		void recv(Channel& chl) {}
+		void recv(Channel&) {}
 		size_t chunkSize() const { return 128; }
 		size_t paddingSize() const { return 0; }
 		TRY_FORCEINLINE void processChunk(
@@ -171,7 +171,7 @@ public:
 		Base::setBaseOts(baseSendOts, prng, chl, true);
 	}
 
-	virtual void initTemporaryStorage()
+	virtual void initTemporaryStorage() override
 	{
 		ChunkerBase::initTemporaryStorage();
 		extraV = allocAlignedBlockArray(2 * chunkSize() + paddingSize());

@@ -141,7 +141,7 @@ public:
 		return std::make_unique<TwoOneMaliciousSender>(splitBase());
 	}
 
-	virtual void initTemporaryStorage()
+	virtual void initTemporaryStorage() override
 	{
 		Base::initTemporaryStorage();
 		hasher.initTemporaryStorage();
@@ -205,7 +205,7 @@ public:
 		return std::make_unique<TwoOneMaliciousReceiver>(splitBase());
 	}
 
-	virtual void initTemporaryStorage()
+	virtual void initTemporaryStorage() override
 	{
 		Base::initTemporaryStorage();
 		hasher.initTemporaryStorage();
