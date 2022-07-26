@@ -124,7 +124,7 @@ public:
 			return numVoles;
 	}
 
-	void (*const generatePtr)(const SmallFieldVoleSender&,
+	void (*generatePtr)(const SmallFieldVoleSender&,
 		size_t, const AES&, block* BOOST_RESTRICT, block* BOOST_RESTRICT);
 
 	template<size_t fieldBitsConst>
@@ -244,7 +244,7 @@ public:
 		return std::max(volesPadded, roundUpTo(numVoles, 4));
 	}
 
-	void (*const generatePtr)(const SmallFieldVoleReceiver&,
+	void (*generatePtr)(const SmallFieldVoleReceiver&,
 		size_t, const AES&, block* BOOST_RESTRICT, const block* BOOST_RESTRICT);
 
 	template<size_t fieldBitsConst>
