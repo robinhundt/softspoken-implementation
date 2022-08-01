@@ -4,7 +4,11 @@ file(GLOB_RECURSE SRCS *.cpp *.c)
 
 set(SRCS "${SRCS}")
 
-add_library(libOTe STATIC ${SRCS})
+if(ENABLE_SIMPLESTOT_ASM OR ENABLE_MR_KYBER)
+  add_library(libOTe STATIC ${SRCS})
+else()
+  add_library(libOTe SHARED ${SRCS})
+endif()
 
 
 # make projects that include libOTe use this as an include folder

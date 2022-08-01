@@ -28,7 +28,7 @@ if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 		endif()
 
 	else()
-		set(COMMON_FLAGS "-Wall -march=native -Wfatal-errors -g")
+		set(COMMON_FLAGS "-Wall -march=native -Wfatal-errors -g -fPIC")
 		SET(CMAKE_CXX_FLAGS_RELEASE "-O3  -DNDEBUG -DGSL_UNENFORCED_ON_CONTRACT_VIOLATION")
 		SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO " -O2 -g -ggdb")
 		SET(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g -ggdb")
