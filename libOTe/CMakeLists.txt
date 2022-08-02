@@ -7,7 +7,7 @@ set(SRCS "${SRCS}")
 if(ENABLE_SIMPLESTOT_ASM OR ENABLE_MR_KYBER)
   add_library(libOTe STATIC ${SRCS})
 else()
-  add_library(libOTe SHARED ${SRCS})
+  add_library(libOTe ${SRCS})
 endif()
 
 
