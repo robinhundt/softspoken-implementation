@@ -24,7 +24,7 @@ struct TwoOneRTCR : AESRekeyManager
 	static block mul2(block x)
 	{
 		block wordsRotated = _mm_shuffle_epi32(x, 0b10010011);
-		block mask(std::array<u32, 4>{mod, 1, 1, 1});
+		block mask(std::array<u32, 4>{{mod, 1, 1, 1}});
 		block output = _mm_slli_epi32(x, 1);
 		output ^= block(_mm_srai_epi32(wordsRotated, 31)) & mask;
 		return output;
