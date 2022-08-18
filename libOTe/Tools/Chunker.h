@@ -348,6 +348,7 @@ struct ChunkerAlloc<std::unique_ptr<T[]>>
 	}
 };
 
+#ifdef ENABLE_AVX
 template<typename T>
 struct ChunkerAlloc<AlignedBlockPtrT<T>>
 {
@@ -356,5 +357,6 @@ struct ChunkerAlloc<AlignedBlockPtrT<T>>
 		return allocAlignedBlockArray<T>(n);
 	}
 };
+#endif
 
 }
