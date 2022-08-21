@@ -7,6 +7,8 @@
 #include "DotMaliciousLeaky.h"
 #include "TwoOneSemiHonest.h"
 
+#include <boost/predef.h>
+
 namespace osuCrypto
 {
 namespace SoftSpokenOT
@@ -65,7 +67,7 @@ struct TwoOneRTCR : AESRekeyManager
 
 		block tmp[numBlocks];
 		block tweakMulLocal = tweakMul; // Avoid aliasing concerns.
-		#ifdef __GNUC__
+		#if BOOST_COMP_GNUC
 		#pragma GCC unroll 16
 		#endif
 		for (size_t i = 0; i < numBlocks / blocksPerTweak; ++i)
