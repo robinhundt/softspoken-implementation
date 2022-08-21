@@ -241,7 +241,7 @@ public:
 			volesPadded = numVoles;
 
 		// Padding for sharedFunctionXor.
-		return std::max(volesPadded, roundUpTo(numVoles, 4));
+		return std::max(volesPadded, size_t(roundUpTo(numVoles, 4)));
 	}
 
 	void (*generatePtr)(const SmallFieldVoleReceiver&,
