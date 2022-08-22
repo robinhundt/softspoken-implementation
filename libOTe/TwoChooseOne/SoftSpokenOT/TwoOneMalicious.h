@@ -67,7 +67,7 @@ struct TwoOneRTCR : AESRekeyManager
 
 		block tmp[numBlocks];
 		block tweakMulLocal = tweakMul; // Avoid aliasing concerns.
-		#if BOOST_COMP_GNUC
+		#if BOOST_COMP_GNUC >= BOOST_VERSION_NUMBER(8,0,0)
 		#pragma GCC unroll 16
 		#endif
 		for (size_t i = 0; i < numBlocks / blocksPerTweak; ++i)
