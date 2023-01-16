@@ -290,7 +290,6 @@ namespace osuCrypto {
 
 
 
-#ifdef OC_ENABLE_SSE2
     //  load          column  w,w+1          (byte index)
     //                   __________________
     //                  |                  |
@@ -872,7 +871,6 @@ namespace osuCrypto {
 
 
     }
-#endif
 
 #ifdef OC_ENABLE_AVX2
     // Templates are used for loop unrolling.
